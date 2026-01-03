@@ -1,6 +1,6 @@
 {
   "name": "mugen-ffmpeg",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "Ffmpeg pour tous",
   "homepage": "https://github.com/moneythemoney999/mugen-ffmpeg#readme",
   "bugs": {
@@ -24,9 +24,6 @@
   "scripts": {
     "postinstall": "node scripts/installer-binaire.js",
     "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "dependencies": {
-    "mugen-ffmpeg": "^0.0.1"
   },
   "devDependencies": {}
 }

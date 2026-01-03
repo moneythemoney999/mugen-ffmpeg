@@ -84,9 +84,7 @@ if (fs.existsSync(cheminCache)) {
 /* =========================
    2️⃣ Téléchargement
 ========================= */
-console.log("Téléchargement en cours...");
-console.log("Attends un peu...");
-console.log("Presque fini...\n");
+console.log("Téléchargement en cours...\n");
 
 https.get(urlFFmpeg, (res) => {
   if (res.statusCode !== 200) {
@@ -94,13 +92,23 @@ https.get(urlFFmpeg, (res) => {
     process.exit(1);
   }
 
+  const total = parseInt(res.headers['content-length'] || "0");
+  let téléchargé = 0;
+
   const fichier = fs.createWriteStream(archive);
+  res.on("data", (chunk) => {
+    téléchargé += chunk.length;
+    if (total) {
+      const pourcentage = ((téléchargé / total) * 100).toFixed(1);
+      process.stdout.write(`\rTéléchargé: ${pourcentage}%`);
+    }
+  });
+
   res.pipe(fichier);
 
   fichier.on("finish", () => {
     fichier.close();
-
-    console.log("Téléchargement terminé.");
+    console.log("\nTéléchargement terminé.\n");
     console.log("Extraction en cours...\n");
 
     /* =========================
@@ -145,7 +153,7 @@ https.get(urlFFmpeg, (res) => {
       path.join(racinePackage, "ffmpeg-path.json"),
       JSON.stringify(
         {
-          chemin: cheminFinalLocal, // ← correspond au mugen_ffmpeg.js
+          chemin: cheminFinalLocal,
           plateforme,
           architecture,
           source: "download"
