@@ -2,19 +2,31 @@
   "name": "mugen-ffmpeg",
   "version": "0.0.1",
   "description": "Ffmpeg pour tous",
-  "main": "mugen_ffmpeg.js",
-  "scripts": {
-    "postinstall": "node scripts/installer-binaire.js",
-    "test": "echo \"Error: no test specified\" && exit 1"
+  "homepage": "https://github.com/moneythemoney999/mugen-ffmpeg#readme",
+  "bugs": {
+    "url": "https://github.com/moneythemoney999/mugen-ffmpeg/issues"
   },
-  "author": "Money Mugen♾️♾️",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/moneythemoney999/mugen-ffmpeg.git"
+  },
   "license": "ISC",
+  "author": "Money Mugen♾️♾️",
   "type": "module",
+  "main": "mugen_ffmpeg.js",
   "files": [
     "mugen_ffmpeg.js",
     "scripts/",
     "bin/",
     "ffmpeg-path.json",
     "README.md"
-  ]
+  ],
+  "scripts": {
+    "postinstall": "node scripts/installer-binaire.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "dependencies": {
+    "mugen-ffmpeg": "^0.0.1"
+  },
+  "devDependencies": {}
 }
