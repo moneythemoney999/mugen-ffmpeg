@@ -1,0 +1,20 @@
+{
+  "name": "mugen-ffmpeg",
+  "version": "0.0.1",
+  "description": "Ffmpeg pour tous",
+  "main": "mugen_ffmpeg.js",
+  "scripts": {
+    "postinstall": "node scripts/installer-binaire.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Money Mugen♾️♾️",
+  "license": "ISC",
+  "type": "module",
+  "files": [
+    "mugen_ffmpeg.js",
+    "scripts/",
+    "bin/",
+    "ffmpeg-path.json",
+    "README.md"
+  ]
+}

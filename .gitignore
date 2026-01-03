@@ -1,0 +1,4 @@
+node_modules/
+bin/
+ffmpeg-path.json
+*.tar.xz
